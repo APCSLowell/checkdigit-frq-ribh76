@@ -42,12 +42,11 @@ public class CheckDigit
     */    
     public static int getDigit(int num, int n)    
     {      
-      int pos = getNumberOfDigits(num)-n+1;
-      while(pos > 1){
-        num/=10;
-        pos--;
-      }
-      return num%10;
+      int numDigits = getNumberOfDigits(num);
+    for (int i = 0; i < numDigits - n; i++) {
+        num /= 10;
+    }
+    return num % 10;
     }     
 
 }
